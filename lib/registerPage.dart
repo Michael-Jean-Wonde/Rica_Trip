@@ -18,49 +18,54 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     Gender? _gender = Gender.Male;
     return Scaffold(
+      appBar: AppBar(
+        leading: Container(),
+        leadingWidth: 0,
+        backgroundColor: Colors.black,
+        toolbarHeight: 150,
+        title: SizedBox(
+          height: 150,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_outlined,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IntroSliderPage()),
+                    );
+                  }),
+              Text(
+                "Create Profile",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(top: 15),
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.only(left: 15, top: 25, bottom: 10),
-              margin: EdgeInsets.only(bottom: 15),
-              color: Colors.black,
-              width: double.infinity,
-              alignment: Alignment.topLeft,
-              height: 150,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  IconButton(
-                      padding: EdgeInsets.only(top: 15, left: 0),
-                      icon: Icon(
-                        Icons.arrow_back_outlined,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const IntroSliderPage()),
-                        );
-                      }),
-                  Text(
-                    "Create Profile",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
-                ],
-              ),
-            ),
             Stack(
               children: [
                 CircleAvatar(
-                  radius: 60,
+                  radius: 50,
                   backgroundColor: Colors.grey.shade200,
                   child: CircleAvatar(
-                    radius: 60,
-                    backgroundImage: AssetImage('assets/images/lemonCake.jpg'),
+                    backgroundColor: Colors.grey,
+                    radius: 50,
+                    child: Icon(
+                      Icons.person_outline,
+                      size: 50,
+                    ),
                   ),
                 ),
                 Positioned(

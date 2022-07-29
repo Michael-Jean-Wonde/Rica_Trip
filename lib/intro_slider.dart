@@ -120,6 +120,8 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Container(),
+        leadingWidth: 15,
         backgroundColor: Colors.orange,
         centerTitle: true,
         title: SizedBox(
@@ -149,7 +151,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(20),
         color: Colors.white,
-        height: 180,
+        height: 200,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
