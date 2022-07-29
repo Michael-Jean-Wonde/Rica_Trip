@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
+import 'package:rica_app/login.dart';
 import 'package:rica_app/registerPage.dart';
 
 class IntroSliderPage extends StatefulWidget {
@@ -68,7 +69,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
           width: double.infinity,
           height: double.infinity,
           child: Container(
-            margin: EdgeInsets.only(bottom: 0, top: 220),
+            margin: EdgeInsets.only(bottom: 20, top: 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,6 +119,20 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        centerTitle: true,
+        title: SizedBox(
+          height: 200,
+          child: Image.asset(
+            "assets/images/RicaLogo.png",
+            alignment: Alignment.bottomCenter,
+          ),
+        ),
+        shadowColor: null,
+        elevation: 0,
+        toolbarHeight: 200,
+      ),
       body: IntroSlider(
         backgroundColorAllSlides: Colors.orange,
         sizeDot: 8.0,
@@ -136,21 +151,24 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
         color: Colors.white,
         height: 180,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Container(
+              width: 280,
               padding: EdgeInsets.only(top: 0, bottom: 5),
               child: Text(
                 "Get Moving With RicaTrip",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 28,
-                  fontWeight: FontWeight.normal,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 10, bottom: 5),
+              padding: EdgeInsets.only(top: 5, bottom: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -183,7 +201,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage()),
+                              builder: (context) => const LoginPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

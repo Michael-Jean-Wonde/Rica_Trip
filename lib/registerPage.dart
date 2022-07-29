@@ -203,10 +203,35 @@ class _RegisterPageState extends State<RegisterPage> {
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
-                    "By continuing, I confirm that i have read & agree to the Terms & Conditions and Privacy Policies",
-                    overflow: TextOverflow.visible,
+                  // Text(
+                  //   "By continuing, I confirm that i have read & agree to the Terms & Conditions and Privacy Policies",
+                  //   overflow: TextOverflow.visible,
+                  //   textAlign: TextAlign.center,
+                  // ),
+                  RichText(
                     textAlign: TextAlign.center,
+                    overflow: TextOverflow.visible,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text:
+                              'By continuing, I confirm that i have read & agree to the, ',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: 'Terms & Conditions ',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                        TextSpan(
+                          text: 'and ',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: 'Privacy Policies ',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 15,

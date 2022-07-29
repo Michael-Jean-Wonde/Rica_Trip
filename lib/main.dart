@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rica_app/intro_slider.dart';
+import 'package:rica_app/login.dart';
 import 'package:rica_app/registerPage.dart';
 
 void main() {
